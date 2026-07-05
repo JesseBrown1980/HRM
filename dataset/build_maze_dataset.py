@@ -80,7 +80,7 @@ def convert_subset(set_name: str, config: DataProcessConfig):
         results["group_indices"].append(puzzle_id)
             
     # Char mappings
-    assert len(all_chars - set(CHARSET)) == 0
+    assert not (all_chars - set(CHARSET))
     
     char2id = np.zeros(256, np.uint8)
     char2id[np.array(list(map(ord, CHARSET)))] = np.arange(len(CHARSET)) + 1
